@@ -1,0 +1,11 @@
+description = "Executes the autonomous 4-stage multi-agent web factory pipeline in src/"
+prompt = """
+Activate Orchestrator Mode as defined in GEMINI.md.
+Client Input & Constraints: {{args}}
+
+Execute the following 4 sequential phases strictly using the definitions in harness/agents/:
+1. Invoke 01-scraper.md using Playwright MCP tools on the provided URLs. Save structured findings to harness/client-briefing.md.
+2. Invoke 02-designer.md reading harness/client-briefing.md and harness/skills/impeccable-taste.md. Output the UI/UX blueprint to harness/design-spec.md.
+3. Invoke 03-architect.md to build the production React/TypeScript/Tailwind application inside src/, strictly adhering to harness/design-spec.md and harness/skills/motion-components.md.
+4. Invoke 04-qa-auditor.md to run 'npm run build', launch the dev server, inspect console errors and render output via Playwright, and capture harness/final-preview.png.
+"""
